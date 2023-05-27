@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} New User {% endblock%}
+{% block content %}
+    <h1>Create a user</h1>
+    <form action="/users/new" method = 'POST'>
+        <label for="first-name"><p>First name:</p>
+            <input type="text" name="first-name">
+        </label>
+
+        <label for="last-name"><p>Last name:</p>
+            <input type="text" name="last-name">
+        </label>
+
+        <label for="image"><p>Url for profile pic:</p>
+            <input type="text" name="image">
+        </label>
+
+        <button type="submit">Add</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
