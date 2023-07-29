@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Edit Tag {% endblock%}
+{% block content %}
+<section class="purple">
+    <div class="solid solid-purp">
+    <h1>Edit tag: "{{tag.name}}"</h1>
+    </div>
+</section>
+<section>
+    <div class="solid new-tag">
+    <form action="/tags/{{tag.id}}/edit">
+        <input type="text" name="tag-name" placeholder="{{tag.name}}">
+        <button>Save</button>
+    </form>
+    <button onclick="location.href='/tags/{{tag.id}}'">Cancel</button>
+</div>
+</section>
+
+
+{% endblock %}

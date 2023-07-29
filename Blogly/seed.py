@@ -1,20 +1,44 @@
-from models import User, Posts , db
+from models import User, Posts, Tag, PostTag, db
 from app import app
 
 db.drop_all()
 db.create_all()
 
-test_user = User(first_name = 'Mr. Test', last_name = 'Test')
-user1 = User(first_name = 'Caity', last_name = 'Foster')
-user2 = User(first_name = 'Wes', last_name = 'Lynch')
-db.session.add(test_user)
-db.session.add(user1)
-db.session.add(user2)
+
+db.session.add_all([
+    User(first_name = 'Mr. Test', last_name = 'Test'),
+    User(first_name = 'Caity', last_name = 'Foster'),
+    User(first_name = 'Wes', last_name = 'Lynch')
+])
 db.session.commit()
 
-test_post = Posts(title = 'Test', content = 'We are testing', user_id = '1')
-post1 = Posts(title = 'Why disc priest is the best healer right now', content = 'Instant cast radiances, is there anymore that has to be said? It feels so fun right now!!!!', user_id = user1.id)
 
-db.session.add(test_post)
-db.session.add(post1)
+
+db.session.add_all([
+    Posts(title = 'Test', content = 'We are testing', user_id = '1'),
+    Posts(title = 'Why disc priest is the best healer right now', content = 'Instant cast radiances, is there anymore that has to be said? It feels so fun right now!!!!', user_id = '2')
+])
+
+db.session.commit()
+
+
+
+db.session.add_all([
+    Tag(name = 'Funny'),
+    Tag(name = 'Sad'),
+    Tag(name = 'Venting'),
+    Tag(name = 'Scary'),
+    Tag(name = 'NSFW')
+])
+
+db.session.commit()
+
+db.session.add_all([
+    PostTag(post_id = '2', tag_id = '1'),
+    PostTag(post_id = '2', tag_id = '2'),
+    PostTag(post_id = '2', tag_id = '3'),
+    PostTag(post_id = '2', tag_id = '5')
+])
+
+
 db.session.commit()

@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %} Post {% endblock %} {% block content%}
+
+<section>
+  <div class="solid">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>
+    <br>
+    <span class="created-by">
+        By: {{post.user.first_name}} {{post.user.last_name}} on {{post.friendly_date}}
+    </span>
+    <br>
+    {% for tag in tags %}
+        <span class="post-tags">
+            <a href="/tags/{{tag.id}}">{{tag.name}}</a>
+        </span>
+    {% endfor %}
+  </div>
+</section>
+
+<button onclick="location.href='/post/{{post.id}}/edit'">Edit</button>
+<button onclick="location.href='/post/{{post.id}}/delete'">Delete</button>
+
+{% endblock %}

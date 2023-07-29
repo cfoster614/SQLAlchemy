@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %} Blogly {% endblock%} {% block
+content %}
+<section class="purple">
+    <div class="solid solid-purp">
+        <h2>Current Users</h2>
+    </div>
+</section>
+
+<section>
+  <div class="solid list">
+      {% for user in users %}
+        <a href="/users/{{user.id}}" class="black-tag">{{user.first_name}} {{user.last_name}}</a>
+      {% endfor %}
+  </div>
+</section>
+<button onclick="location.href='/users/new'">Add User</button>
+
+{% endblock %}

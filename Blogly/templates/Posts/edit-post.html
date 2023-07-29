@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block title %} Post {% endblock %} {% block content
+%}
+<section class="purple">
+  <div class="solid solid-purp">
+    <h3>Editing post "{{post.title}}"</h3>
+  </div>
+</section>
+<section>
+  <div class="solid">
+    <form action="/post/{{post.id}}/edit" method="POST">
+      <div class="row">
+        <input
+          type="text"
+          name="title"
+          placeholder="{{post.title}}"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <textarea
+          type="text"
+          name="content"
+          placeholder="{{post.content}}"
+        ></textarea>
+      </div>
+
+    {% for tag in tags %}
+    <div class="form-check">
+        <input type="checkbox" , name="tags-used" value="{{tag.id}}" class="form-check-input" id="defaultCheck{{tag.id}}1">
+        <label for="defaultCheck{{tag.id}}1" class="form-check-label">
+            {{tag.name}}
+        </label>
+    </div>
+   
+      {% endfor %}
+
+      <button>Save</button>
+      <button onclick="location.href='/post/{{post.id}}'">Cancel</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
