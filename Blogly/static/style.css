@@ -1,1 +1,178 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    border: solid;
+    background-image: url('forest-gb30219098_1280.jpg');
+    background-size:cover;
+    font-size: 2rem;
+}
 
+.main-container {
+    display: grid;
+    justify-content: center;
+    grid-gap: 1rem;
+}
+
+section {
+    background-color: rgb(254,179,244, .5);
+    padding: 10px;
+    border-radius: 5px;
+    
+   
+  
+}
+
+.navbar {
+    padding: 3rem;
+    margin-bottom: 4rem;
+   
+}
+
+.navbar-custom {
+    background-color: rgba(97, 95, 127, .8);
+    border-radius: 5px;
+    
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color:beige;
+    font-family: 'Oooh Baby';
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-shadow: 1px 4px 15px black;
+}
+
+.solid {
+    background-color:rgb(254,179,244, .9);
+    padding: 1rem;
+    border-radius: 5px;
+    border: solid rgba(97, 95, 127, 1);
+    min-width: 45vw;
+}
+
+
+.post-tags {
+    background-color: rgba(97, 95, 127, 1);
+    color:beige;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 12px;
+}
+
+form {
+    padding: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+textarea {
+    margin-top: 10px;
+}
+
+.profile {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    
+    
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30rem;
+    
+}
+
+#profile-section {
+    margin-top: 5rem;
+}
+
+img {
+    border-radius: 100%;
+    border: solid rgba(97, 95, 127, 1) 5px;
+    margin-right: 1rem;
+    
+}
+
+
+
+.profile > h1,
+.solid > h3 {
+   text-align: center;
+   font-family: 'Oooh Baby';
+   font-weight: 700;
+   text-shadow: 3px 1px 3px #8769b5;
+}
+
+.solid > h3 {
+    padding-bottom: 5px;
+    border-bottom: solid rgba(97, 95, 127, .8);
+    border-radius: 2%;
+}
+
+.posts-title {
+    text-align: center;
+}
+
+.purple {
+    background-color: rgba(136, 122, 168, .5);
+   
+}
+
+.solid-purp {
+    background-color: rgba(136, 122, 168, .98);
+    color:beige;
+    text-align: center;
+    border: solid rgba(97, 95, 127, 1);
+    font-family: 'Oooh Baby';
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 1px 4px 15px black;
+}
+
+
+
+#welcome {
+    font-family: 'Oooh Baby';
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 6px black;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+span > a {
+    color:beige;
+}
+
+span > a:hover {
+    color: #b39ad8;
+}
+
+.black-tag {
+    color: black;
+    margin:0;
+}
+.created-by {
+    font-size: 90%;
+}
+.tag-height {
+    max-height: 25vh;
+}
+
+.new-tag {
+    display: flex;
+    justify-content: center;
+}

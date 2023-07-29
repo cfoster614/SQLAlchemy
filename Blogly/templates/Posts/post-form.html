@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} New Post {% endblock %}
+{% block content %}
+<div class="container">
+    <section class="purple">
+        <div class="solid solid-purp">
+            <h1>Add a post for {{user.first_name}} {{user.last_name}}</h1>
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="solid">
+            <form action="/users/{{user.id}}/posts/new" method='POST'>
+                <div class="row">
+                    <input type="text" name="title" class="form-control" placeholder="Title">
+                </div>
+                <br>
+                <div class="row">
+                    <textarea name="content" placeholder="What's on your mind?">
+                    </textarea>
+                </div>
+
+                {% for tag in tags %}
+                    <div class="form-check">
+                        <input type="checkbox" name="tags-used" value="{{tag.id}}" class="form-check-input" id="defaultCheck{{tag.id}}">
+                        <label for="defaultCheck{{tag.id}}" class="form-check-label">{{tag.name}}</label>
+                    </div>
+                {% endfor %}
+
+                <button type="submit">Add</button>
+                <button onclick="location.href='/users/{{user.id}}'">Cancel</button>
+            </form>
+        </div>
+</section>
+</div>
+</div>
+
+
+{% endblock %}

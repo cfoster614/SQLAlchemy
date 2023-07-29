@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Tags {% endblock%} {% block content
+%}
+<section class="purple">
+  <div class="solid solid-purp">
+    <h4>Need something else? Create your own tag by clicking "add"!</h4>
+  </div>
+</section>
+
+<section>
+  <div class="solid tag-height">
+    <h3>Current Tags</h3>
+    <div class="list tag-height">
+        {% for tag in tags %}
+        <a href="/tags/{{tag.id}}" class="black-tag">{{tag.name}}</a>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+<button class="add-button" onclick="location.href='/tags/new'">Add</button>
+
+{% endblock %}
